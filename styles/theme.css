@@ -1,0 +1,120 @@
+:root {
+  /* Page bg is now meaningfully darker than card surfaces — cards should
+     read as panels sitting ON the page, not blend into it. */
+  --bg: #08090b;
+  --surface: #16181c;
+  --surface-raised: #1c1f24;
+  --border: #24272c;
+  --border-strong: #383d45;
+
+  --text: #edeff1;
+  --text-muted: #999fa7;
+  --text-faint: #61666d;
+
+  /* One confident accent — a desk-lamp amber. Everything else is neutral. */
+  --accent: #e8a33d;
+  --accent-soft: #f5c877;
+  --accent-wash: rgba(232, 163, 61, 0.12);
+
+  /* Status — used only for urgency/state, never as decoration. */
+  --success: #4ade80;
+  --success-wash: rgba(74, 222, 128, 0.12);
+  --danger: #f87171;
+  --danger-wash: rgba(248, 113, 113, 0.12);
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", Menlo, monospace;
+
+  /* Kept deliberately modest. Two levels only — a card gets one radius,
+     things inside a card (rows, dividers) get none. No radius-on-radius. */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* A faint, static dot grid — the one recurring texture of this design.
+   No motion, no blob glow: this is a study tool used late at night, not a
+   marketing site, and the background should never fight for attention. */
+body {
+  background-image: radial-gradient(circle, rgba(237, 239, 241, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+#root { min-height: 100vh; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+
+/* Shared building blocks used across pages */
+.eyebrow {
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text-faint);
+}
+.tab-row { display: flex; gap: 22px; border-bottom: 1px solid var(--border); }
+.tab-row-btn {
+  display: flex; align-items: center; gap: 6px;
+  background: none; border: none; border-bottom: 2px solid transparent;
+  padding: 10px 2px 12px; font-size: 13px; font-weight: 500; color: var(--text-faint);
+  cursor: pointer; transition: color 0.15s ease, border-color 0.15s ease;
+}
+.tab-row-btn:hover { color: var(--text-muted); }
+.tab-row-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+.badge {
+  display: inline-flex; align-items: center; font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.04em; padding: 3px 9px; border-radius: 6px;
+}
+
+/* One outer "panel" treatment, used for exactly two things on Home:
+   the Course Overview panel and the Timeline panel. Nothing nests
+   another one of these inside itself. */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.panel-header {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  padding: 18px 22px; border-bottom: 1px solid var(--border);
+}
+.panel-header .eyebrow { color: var(--text-muted); font-size: 11px; }
+.panel-body { padding: 8px 10px 14px; }
+
+/* Flat list rows — no per-row card chrome. Rows are separated by a
+   hairline divider, not by giving each one its own box. */
+.flat-row {
+  display: flex; align-items: center; gap: 13px;
+  padding: 12px 12px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s ease;
+}
+.flat-row:last-child { border-bottom: none; }
+.flat-row:hover { background: var(--surface-raised); }
+
+/* Custom cursor follower — a small precise ring, not a glow blob. Purely
+   decorative, never blocks clicks, and hides completely over the two
+   panels and the navbar (see data-cursor-exclude) so it never competes
+   with real content. Skipped entirely on touch devices. */
+.cursor-follower {
+  position: fixed; top: 0; left: 0; width: 22px; height: 22px; margin: -11px 0 0 -11px;
+  border: 1.5px solid var(--accent-soft); border-radius: 50%;
+  pointer-events: none; z-index: 300; opacity: 0;
+  transition: opacity 0.18s ease, width 0.15s ease, height 0.15s ease, margin 0.15s ease, border-color 0.15s ease;
+  will-change: transform;
+}
+.cursor-follower.visible { opacity: 0.55; }
+.cursor-follower.hovering-link { width: 32px; height: 32px; margin: -16px 0 0 -16px; border-color: var(--accent); opacity: 0.85; }

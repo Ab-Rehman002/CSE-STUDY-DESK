@@ -1,0 +1,14 @@
+.timeline-header-sub { font-size: 11px; color: var(--text-faint); }
+.timeline-subheader { border-top: 1px solid var(--border); }
+.timeline-empty { font-size: 12.5px; color: var(--text-faint); font-style: italic; padding: 10px 12px; }
+.timeline-date {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: 36px; flex-shrink: 0; font-family: var(--font-mono);
+}
+.timeline-day { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.1; }
+.timeline-month { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); }
+.timeline-item-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.timeline-item-subject { font-size: 12.5px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.timeline-item-meta { font-size: 10.5px; color: var(--text-faint); }
+.timeline-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border-strong); flex-shrink: 0; margin: 0 15px 0 6px; }
+.timeline-tba { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; color: var(--text-faint); flex-shrink: 0; }

@@ -1,0 +1,16 @@
+.archive-page { max-width: 720px; margin: 0 auto; padding: 108px 24px 100px; position: relative; z-index: 5; }
+.archive-eyebrow { margin-bottom: 6px; }
+.archive-title { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.archive-sub { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 32px; }
+.archive-empty { font-size: 13px; color: var(--text-faint); font-style: italic; }
+.archive-list { display: flex; flex-direction: column; gap: 8px; }
+.archive-card {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius-md); padding: 17px 20px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.archive-card:hover { border-color: var(--border-strong); background: var(--surface-raised); }
+.archive-card-number { background: var(--surface-raised); color: var(--text-muted); flex-shrink: 0; }
+.archive-card-title { flex: 1; font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); }
+.archive-card-arrow { color: var(--text-faint); }

@@ -1,0 +1,25 @@
+.countdown-hero { padding: 4px 0 22px; margin-bottom: 8px; }
+.countdown-hero-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap; }
+.countdown-hero-main { flex: 1; min-width: 240px; }
+.countdown-hero .eyebrow { margin-bottom: 10px; }
+.countdown-name { font-family: var(--font-display); font-size: clamp(26px,4vw,38px); font-weight: 600; line-height: 1.12; margin-bottom: 10px; }
+.countdown-date-row { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 16px; }
+.countdown-date-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); font-family: var(--font-mono); }
+.countdown-date-item svg { color: var(--text-faint); flex-shrink: 0; }
+.countdown-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--border-strong); color: var(--text);
+  font-size: 12.5px; font-weight: 600; padding: 9px 16px; border-radius: var(--radius-sm);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.countdown-cta:hover { border-color: var(--accent); background: var(--accent-wash); }
+.countdown-row { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.countdown-row-label { margin-bottom: 0; }
+.countdown-boxes { display: flex; gap: 8px; }
+.countdown-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; min-width: 60px; text-align: center; }
+.countdown-num { font-family: var(--font-mono); font-size: 24px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+.countdown-sub { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); margin-top: 5px; }
+.countdown-hero-divider { height: 1px; background: var(--border); margin: 22px 0 14px; }
+.countdown-tagline { font-family: var(--font-display); font-style: italic; font-size: 13.5px; color: var(--text-faint); }
+.countdown-hero-empty { padding: 10px 0 26px; }
+.countdown-empty-text { font-size: 14px; color: var(--text-muted); margin-top: 8px; }

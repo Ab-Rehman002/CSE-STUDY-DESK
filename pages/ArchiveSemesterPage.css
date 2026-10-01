@@ -1,0 +1,8 @@
+.archive-sem-page { max-width: 1080px; margin: 0 auto; padding: 108px 24px 80px; position: relative; z-index: 5; }
+.archive-sem-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+.archive-sem-back:hover { color: var(--text); }
+.archive-sem-eyebrow { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+.archive-sem-title { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--text); margin-bottom: 20px; }
+.archive-sem-tabs { margin-bottom: 20px; }
+.course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 12px; }
+.archive-empty { font-size: 13px; color: var(--text-faint); font-style: italic; }

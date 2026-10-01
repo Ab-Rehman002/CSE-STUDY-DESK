@@ -1,0 +1,10 @@
+.notice-stack { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+.notice-banner {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--accent-wash);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 11px 15px;
+}
+.notice-icon { color: var(--accent); flex-shrink: 0; }
+.notice-text { font-size: 12.5px; color: var(--text); line-height: 1.5; }

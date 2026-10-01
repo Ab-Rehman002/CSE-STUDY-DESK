@@ -1,0 +1,14 @@
+.home-page { max-width: 1120px; margin: 0 auto; padding: 108px 24px 80px; position: relative; z-index: 5; }
+.home-semester { margin-bottom: 10px; }
+.home-grid { display: grid; grid-template-columns: 1fr 300px; gap: 20px; align-items: start; margin-top: 22px; }
+.home-tabs { border-bottom: none; gap: 18px; }
+.home-tabs .tab-row-btn { padding: 2px 2px 2px; }
+.home-group { padding: 14px 0 6px; }
+.home-group:first-child { padding-top: 6px; }
+.home-group + .home-group { border-top: 1px solid var(--border); margin-top: 4px; }
+.home-group-heading { padding: 0 12px 8px; }
+.home-loading, .home-empty { font-size: 13px; color: var(--text-faint); font-style: italic; padding: 20px 12px; }
+
+@media (max-width: 880px) {
+  .home-grid { grid-template-columns: 1fr; }
+}
